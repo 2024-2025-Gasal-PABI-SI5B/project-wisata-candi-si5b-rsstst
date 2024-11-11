@@ -30,6 +30,78 @@ class DetailScreen extends StatelessWidget {
           ),
         ],
       ),
+      Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 16.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    candi.name,
+                    style: const TextStyle(
+                        fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.favorite_border))
+                ],
+              ),
+              const SizedBox(height: 16.0),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.place,
+                    color: Colors.red,
+                  ),
+                  const SizedBox(width: 8),
+                  const SizedBox(
+                      width: 70,
+                      child: Text(
+                        'Lokasi',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                  Text(': ${candi.location}'),
+                ],
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.place,
+                    color: Colors.blue,
+                  ),
+                  const SizedBox(width: 8),
+                  const SizedBox(
+                      width: 70,
+                      child: Text(
+                        'Dibangun',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                  Text(': ${candi.built}'),
+                ],
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.place,
+                    color: Colors.green,
+                  ),
+                  const SizedBox(width: 8),
+                  const SizedBox(
+                      width: 70,
+                      child: Text(
+                        'Tipe ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )),
+                  Text(': ${candi.type}'),
+                ],
+              ),
+              const SizedBox(height: 16.0),
+              Divider(color: Colors.deepPurple.shade100),
+              const SizedBox(height: 16.0),
+            ],
+          ))
     ]));
   }
 }
