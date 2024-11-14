@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:wisata_candi_restuandra/models/candi.dart';
 
@@ -116,11 +117,58 @@ class DetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Divider(color: Colors.deepPurple.shade100),
-                      const Text(''),
+                      const Text(
+                        'Galeri',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       const SizedBox(height: 10.0),
-                      const SizedBox(),
+                      SizedBox(
+                          height: 100.0,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: candi.imageUrls.length,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        border: Border.all(
+                                            color: Colors.deepPurple.shade100,
+                                            width: 2),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                        child: CachedNetworkImage(
+                                          imageUrl: candi.imageUrls[index],
+                                          width: 128,
+                                          height: 128,
+                                          fit: BoxFit.cover,
+                                          placeholder: (context, url) =>
+                                              Container(
+                                            width: 128,
+                                            height: 128,
+                                            color: Colors.deepPurple[50],
+                                          ),
+                                          errorWidget: (context, url, error) =>
+                                              const Icon(Icons.error),
+                                        ),
+                                      )),
+                                ),
+                              );
+                            },
+                          )),
                       const SizedBox(height: 4.0),
-                      const Text('')
+                      const Text(
+                        'Tap untuk memperbesar',
+                        style: TextStyle(fontSize: 12.0, color: Colors.black54),
+                      ),
                     ],
                   ),
                 )
