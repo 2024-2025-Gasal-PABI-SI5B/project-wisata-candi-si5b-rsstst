@@ -1,8 +1,11 @@
-Restu Andra Ahmad Saeroji - 22201170
+##Restu Andra Ahmad Saeroji - 22201170
 
-TODO --
+#TODO --
+
 Add more
+
 Anime girl pls
+
 etc etc <3
 
-part 2 3 4
+part 3 4
